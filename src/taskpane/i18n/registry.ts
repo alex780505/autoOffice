@@ -2,7 +2,7 @@ import type { LocaleMeta } from './types.ts';
 
 export const LOCALES = {
   en: { name: 'English', nativeName: 'English', direction: 'ltr', fallback: null },
-  he: { name: 'Hebrew',  nativeName: 'עברית',   direction: 'rtl', fallback: 'en' },
+  fr: { name: 'French',  nativeName: 'Français', direction: 'ltr', fallback: 'en' },
 } as const satisfies Record<string, LocaleMeta>;
 
 export type LocaleId = keyof typeof LOCALES;
