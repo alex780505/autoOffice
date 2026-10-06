@@ -12,9 +12,9 @@ describe('registry', () => {
     expect(LOCALES.en.direction).toBe('ltr');
     expect(LOCALES.en.fallback).toBeNull();
     expect(LOCALES.en.nativeName).toBe('English');
-    expect(LOCALES.he.direction).toBe('rtl');
-    expect(LOCALES.he.fallback).toBe('en');
-    expect(LOCALES.he.nativeName).toBe('עברית');
+    expect(LOCALES.fr.direction).toBe('ltr');
+    expect(LOCALES.fr.fallback).toBe('en');
+    expect(LOCALES.fr.nativeName).toBe('French');
   });
 
   it('default locale is en', () => {
@@ -23,19 +23,19 @@ describe('registry', () => {
 
   it('isLocaleId narrows valid ids', () => {
     expect(isLocaleId('en')).toBe(true);
-    expect(isLocaleId('he')).toBe(true);
+    expect(isLocaleId('fr')).toBe(true);
     expect(isLocaleId('xx')).toBe(false);
     expect(isLocaleId('')).toBe(false);
   });
 
   it('getLocaleMeta returns metadata for a known id', () => {
-    expect(getLocaleMeta('he').direction).toBe('rtl');
+    expect(getLocaleMeta('fr').direction).toBe('ltr');
   });
 
   it('availableLocales returns all registered locales as { id, ...meta } rows', () => {
     const list = availableLocales();
-    expect(list.map(l => l.id).sort()).toEqual(['en', 'he']);
-    expect(list.find(l => l.id === 'he')!.nativeName).toBe('עברית');
+    expect(list.map(l => l.id).sort()).toEqual(['en', 'fr']);
+    expect(list.find(l => l.id === 'fr')!.nativeName).toBe('French');
   });
 
   it('every fallback (when set) points at another registered locale', () => {
