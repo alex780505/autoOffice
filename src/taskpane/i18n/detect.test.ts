@@ -4,22 +4,17 @@ import { detectLocale, normalizeLanguageTag } from './detect.ts';
 describe('normalizeLanguageTag', () => {
   it('resolves exact matches', () => {
     expect(normalizeLanguageTag('en')).toBe('en');
-    expect(normalizeLanguageTag('he')).toBe('he');
+    expect(normalizeLanguageTag('fr')).toBe('fr');
   });
 
   it('lowercases and dashifies', () => {
     expect(normalizeLanguageTag('EN_US')).toBe('en');
-    expect(normalizeLanguageTag('HE-IL')).toBe('he');
+    expect(normalizeLanguageTag('FR_FR')).toBe('fr');
   });
 
   it('strips trailing subtags until a registry hit', () => {
     expect(normalizeLanguageTag('en-GB')).toBe('en');
-    expect(normalizeLanguageTag('he-Hebr-IL')).toBe('he');
-  });
-
-  it('maps historical codes', () => {
-    expect(normalizeLanguageTag('iw')).toBe('he');
-    expect(normalizeLanguageTag('iw-IL')).toBe('he');
+    expect(normalizeLanguageTag('fr-FR')).toBe('fr');
   });
 
   it('returns null for unsupported tags', () => {
@@ -35,7 +30,7 @@ describe('detectLocale', () => {
   });
 
   it('prefers a saved locale that is still in the registry', () => {
-    expect(detectLocale({ saved: 'he' })).toBe('he');
+    expect(detectLocale({ saved: 'fr' })).toBe('fr');
   });
 
   it('ignores a saved locale that is no longer registered', () => {
@@ -43,14 +38,14 @@ describe('detectLocale', () => {
   });
 
   it('uses Office.context.displayLanguage when no saved value', () => {
-    vi.stubGlobal('Office', { context: { displayLanguage: 'he-IL' } });
-    expect(detectLocale({})).toBe('he');
+    vi.stubGlobal('Office', { context: { displayLanguage: 'fr-FR' } });
+    expect(detectLocale({})).toBe('fr');
   });
 
   it('falls back to navigator.languages', () => {
     vi.stubGlobal('Office', undefined);
     vi.stubGlobal('navigator', { languages: ['fr-FR', 'he-IL', 'en-US'] });
-    expect(detectLocale({})).toBe('he'); // first registry hit wins
+    expect(detectLocale({})).toBe('fr'); // first registry hit wins
   });
 
   it('falls back to DEFAULT_LOCALE', () => {

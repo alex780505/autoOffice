@@ -32,7 +32,7 @@ describe('LanguageProvider + hooks', () => {
     expect(screen.getByTestId('dir').textContent).toBe('ltr');
   });
 
-  it('switches to Hebrew, updates direction, and updates <html lang>/<dir>', async () => {
+  it('switches to French, updates direction, and updates <html lang>/<dir>', async () => {
     render(
       <LanguageProvider initialLocale="en">
         <Probe />
@@ -46,10 +46,10 @@ describe('LanguageProvider + hooks', () => {
     fireEvent.click(screen.getByTestId('switch'));
 
     await waitFor(() => {
-      expect(screen.getByTestId('locale').textContent).toBe('he');
+      expect(screen.getByTestId('locale').textContent).toBe('fr');
     });
     expect(screen.getByTestId('dir').textContent).toBe('rtl');
-    expect(document.documentElement.getAttribute('lang')).toBe('he');
-    expect(document.documentElement.getAttribute('dir')).toBe('rtl');
+    expect(document.documentElement.getAttribute('lang')).toBe('fr');
+    expect(document.documentElement.getAttribute('dir')).toBe('ltr');
   });
 });

@@ -4,10 +4,10 @@ import { makeFormatters } from './format.ts';
 describe('formatters', () => {
   it('formatDate returns a non-empty locale-specific string', () => {
     const en = makeFormatters('en');
-    const he = makeFormatters('he');
+    const fr = makeFormatters('fr');
     const ts = Date.UTC(2026, 0, 15);
     expect(en.formatDate(ts, 'short')).toMatch(/\d/);
-    expect(he.formatDate(ts, 'short')).toMatch(/\d/);
+    expect(fr.formatDate(ts, 'short')).toMatch(/\d/);
   });
 
   it('formatNumber uses locale-appropriate separators', () => {

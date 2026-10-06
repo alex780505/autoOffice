@@ -27,7 +27,7 @@ describe('TranslationService', () => {
 
   it('falls back through the chain to en when a key is missing in the active locale', async () => {
     const svc = new TranslationService();
-    await svc.setLocale('he');
+    await svc.setLocale('fr');
     // Inject a synthetic missing key by stubbing the active dict.
     (svc as any).active = { ...((svc as any).active), common: { appName: 'AutoOffice' } };
     // 'common.cancel' no longer exists in stubbed he dict; falls back to en.
@@ -53,7 +53,7 @@ describe('TranslationService', () => {
     let calls = 0;
     const off = svc.subscribe(() => { calls++; });
     await svc.setLocale('en');
-    await svc.setLocale('he');
+    await svc.setLocale('fr');
     off();
     await svc.setLocale('en');
     expect(calls).toBe(2);
