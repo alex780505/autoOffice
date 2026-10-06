@@ -6,15 +6,15 @@
   xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
   xsi:type="TaskPaneApp">
 
-  <Id>a6711798-92c5-40a2-85ce-2adf4e53fe65</Id>
+  <Id>e20f1e93-a34c-448e-8fd4-6b53d699edaf</Id>
   <Version>1.0.0.0</Version>
   <ProviderName>AutoOffice</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="AutoOffice" />
   <Description DefaultValue="AI-powered dynamic code execution add-in for Microsoft Word, Excel, and PowerPoint" />
-  <IconUrl DefaultValue="https://sivan22.github.io/autoOffice/assets/icon-32.png" />
-  <HighResolutionIconUrl DefaultValue="https://sivan22.github.io/autoOffice/assets/icon-64.png" />
-  <SupportUrl DefaultValue="https://github.com/Sivan22/autoOffice" />
+  <IconUrl DefaultValue="https://alex780505.github.com/autoOffice/assets/icon-32.png" />
+  <HighResolutionIconUrl DefaultValue="https://alex780505.github.com/autoOffice/assets/icon-64.png" />
+  <SupportUrl DefaultValue="https://github.com/alex780505/autoOffice" />
 
   <Hosts>
     <Host Name="Document" />
@@ -23,7 +23,7 @@
   </Hosts>
 
   <DefaultSettings>
-    <SourceLocation DefaultValue="https://sivan22.github.io/autoOffice/" />
+    <SourceLocation DefaultValue="https://alex780505.github.com/autoOffice/" />
   </DefaultSettings>
 
   <Permissions>ReadWriteDocument</Permissions>
@@ -145,13 +145,13 @@
 
     <Resources>
       <bt:Images>
-        <bt:Image id="Icon.16x16" DefaultValue="https://sivan22.github.io/autoOffice/assets/icon-16.png" />
-        <bt:Image id="Icon.32x32" DefaultValue="https://sivan22.github.io/autoOffice/assets/icon-32.png" />
-        <bt:Image id="Icon.80x80" DefaultValue="https://sivan22.github.io/autoOffice/assets/icon-80.png" />
+        <bt:Image id="Icon.16x16" DefaultValue="https://alex780505.github.com/autoOffice/assets/icon-16.png" />
+        <bt:Image id="Icon.32x32" DefaultValue="https://alex780505.github.com/autoOffice/assets/icon-32.png" />
+        <bt:Image id="Icon.80x80" DefaultValue="https://alex780505.github.com/autoOffice/assets/icon-80.png" />
       </bt:Images>
       <bt:Urls>
-        <bt:Url id="Taskpane.Url" DefaultValue="https://sivan22.github.io/autoOffice/" />
-        <bt:Url id="GetStarted.LearnMoreUrl" DefaultValue="https://github.com/Sivan22/autoOffice" />
+        <bt:Url id="Taskpane.Url" DefaultValue="https://alex780505.github.com/autoOffice/" />
+        <bt:Url id="GetStarted.LearnMoreUrl" DefaultValue="https://alex780505.github.com/autoOffice" />
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="GetStarted.Title" DefaultValue="AutoOffice is ready" />
