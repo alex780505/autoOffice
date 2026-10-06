@@ -9,9 +9,9 @@ describe('loader', () => {
     expect((dict as any).common.appName).toBe('AutoOffice');
   });
 
-  it('loads he.json and returns Hebrew strings', async () => {
-    const dict = await loadLocale('he');
-    expect((dict as any).common.cancel).toBe('ביטול');
+  it('loads fr.json and returns French strings', async () => {
+    const dict = await loadLocale('fr');
+    expect((dict as any).common.cancel).toBe('French');
   });
 
   it('returns the same object reference on repeated calls (cache)', async () => {
@@ -27,3 +27,4 @@ describe('loader', () => {
     expect((after as any).common.appName).toBe('AutoOffice');
   });
 });
+ 

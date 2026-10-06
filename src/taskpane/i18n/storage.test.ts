@@ -12,9 +12,9 @@ describe('storage (localStorage path)', () => {
   });
 
   it('roundtrips a registered locale', () => {
-    saveStoredLocale('he');
-    expect(localStorage.getItem(STORAGE_KEY)).toBe('he');
-    expect(loadStoredLocale()).toBe('he');
+    saveStoredLocale('fr');
+    expect(localStorage.getItem(STORAGE_KEY)).toBe('fr');
+    expect(loadStoredLocale()).toBe('fr');
   });
 
   it('returns null for stored values not in the registry', () => {
@@ -30,8 +30,9 @@ describe('storage (localStorage path)', () => {
       saveAsync: () => {},
     };
     vi.stubGlobal('Office', { context: { roamingSettings: roaming } });
-    saveStoredLocale('he');
-    expect(store.get(STORAGE_KEY)).toBe('he');
-    expect(loadStoredLocale()).toBe('he');
+    saveStoredLocale('fr');
+    expect(store.get(STORAGE_KEY)).toBe('fr');
+    expect(loadStoredLocale()).toBe('fr');
   });
 });
+ 

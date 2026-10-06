@@ -53,3 +53,4 @@ describe('LanguageProvider + hooks', () => {
     expect(document.documentElement.getAttribute('dir')).toBe('ltr');
   });
 });
+ 

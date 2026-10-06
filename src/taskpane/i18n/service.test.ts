@@ -20,9 +20,9 @@ describe('TranslationService', () => {
   it('switches locales and reflects new strings', async () => {
     const svc = new TranslationService();
     await svc.setLocale('en');
-    await svc.setLocale('he');
-    expect(svc.t('common.cancel')).toBe('ביטול');
-    expect(svc.getLocale()).toBe('he');
+    await svc.setLocale('fr');
+    expect(svc.t('common.cancel')).toBe('French');
+    expect(svc.getLocale()).toBe('fr');
   });
 
   it('falls back through the chain to en when a key is missing in the active locale', async () => {
